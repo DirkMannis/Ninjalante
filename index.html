@@ -5,9 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ninjalante</title>
     
-    <!-- Favicon (add later) -->
-    <link rel="icon" href="favicon.png" type="image/png">
-
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap');
 
@@ -21,13 +18,13 @@
         }
 
         .container {
-            max-width: 720px;
+            max-width: 760px;
             margin: 0 auto;
             padding: 0 24px;
         }
 
         header {
-            padding: 40px 0 48px;
+            padding: 48px 0 52px;
             text-align: center;
             border-bottom: 1px solid rgba(255,255,255,0.08);
         }
@@ -47,43 +44,47 @@
             color: #67e8f9;
             letter-spacing: 4px;
             margin-top: 8px;
-            opacity: 0.9;
         }
 
         h2 {
             font-size: 2.1rem;
-            margin: 60px 0 24px;
+            margin: 60px 0 28px;
             text-align: center;
         }
 
         /* Video Carousel */
-        .video-carousel {
+        .carousel {
             display: flex;
             gap: 20px;
             overflow-x: auto;
             padding-bottom: 20px;
             scrollbar-width: none;
+            scroll-snap-type: x mandatory;
         }
 
+        .carousel::-webkit-scrollbar { display: none; }
+
         .video-card {
-            min-width: 320px;
+            min-width: 340px;
             background: #111;
             border-radius: 16px;
             overflow: hidden;
             border: 1px solid #1f2937;
+            scroll-snap-align: start;
         }
 
         .video-card img {
             width: 100%;
-            height: 180px;
+            height: 190px;
             object-fit: cover;
         }
 
         .video-info {
-            padding: 14px;
+            padding: 16px;
         }
 
-        .shorts-grid {
+        /* Shorts */
+        .shorts {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
             gap: 16px;
@@ -98,8 +99,22 @@
 
         .short-card img {
             width: 100%;
-            height: 240px;
+            height: 280px;
             object-fit: cover;
+        }
+
+        .link-box {
+            background: #111;
+            padding: 32px;
+            border-radius: 16px;
+            text-align: center;
+            border: 1px solid #1f2937;
+            margin-top: 40px;
+        }
+
+        a {
+            color: #67e8f9;
+            text-decoration: none;
         }
     </style>
 </head>
@@ -113,52 +128,56 @@
 
     <main class="container">
 
-        <!-- Featured Videos Carousel -->
+        <!-- Latest Videos Carousel -->
         <h2>Latest Videos</h2>
-        <div class="video-carousel">
-            <!-- Add your 3 main video thumbnails here -->
+        <div class="carousel">
+            <!-- Video 1 -->
             <div class="video-card">
                 <img src="https://i.ytimg.com/vi/cO_AZo069L0/maxresdefault.jpg" alt="Video 1">
                 <div class="video-info">
                     <p><strong>Collecting Minecraft Features You FORGOT Existed.........kinda</strong></p>
                 </div>
             </div>
-        <div class="video-carousel">
-            <!-- Add your 3 main video thumbnails here -->
+
+            <!-- Video 2 -->
             <div class="video-card">
                 <img src="https://i.ytimg.com/vi/QEVZjcWg0Yo/maxresdefault.jpg" alt="Video 1">
                 <div class="video-info">
                     <p><strong>Using EVERY Minecraft version to Intentionally CORRUPT my World</strong></p>
                 </div>
             </div>
-        <div class="video-carousel">
-            <!-- Add your 3 main video thumbnails here -->
+
+            <!-- Video 3 -->
             <div class="video-card">
                 <img src="https://i.ytimg.com/vi/YAb8z0z4NBI/maxresdefault.jpg" alt="Video 1">
                 <div class="video-info">
                     <p><strong>Can 2 NOOBS beat Minecraft's OCEAN ONLY Superflat</strong></p>
                 </div>
             </div>
-
         </div>
 
-        <!-- Shorts Section -->
+        <!-- Shorts -->
         <h2>Shorts</h2>
-        <div class="shorts-grid">
-            <!-- Add Shorts thumbnails here -->
+        <div class="shorts">
+            <div class="short-card">
+                <a href="https://www.youtube.com/shorts/2aDjG36HKd8" target="_blank">
+                    <img src="https://i.ytimg.com/vi/2aDjG36HKd8/maxresdefault.jpg" alt="Short">
+                </a>
+            </div>
         </div>
 
-        <!-- Links Section -->
-        <h2>Links</h2>
-        <div style="background:#111; padding:28px; border-radius:16px; border:1px solid #1f2937;">
-            <!-- We'll populate this from his Linkfo -->
-            <p style="text-align:center; opacity:0.7;">YouTube • Discord • More coming soon...</p>
+        <!-- Links -->
+        <div class="link-box">
+            <p style="font-size:1.1rem; margin-bottom:12px;">
+                <a href="https://linkfo.me/ninjalante" target="_blank">Visit my Linkfo</a>
+            </p>
+            <p style="opacity:0.7;">Join my Discord: Coming soon</p>
         </div>
 
     </main>
 
     <footer style="text-align:center; padding:60px 0; color:#555; font-size:0.85rem;">
-        © Ninjalante • All Rights Reserved
+        © Ninjalante
     </footer>
 </body>
 </html>
