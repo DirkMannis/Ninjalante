@@ -52,14 +52,23 @@
             text-align: center;
         }
 
-        /* Video Carousel */
+        /* Auto-scrolling Carousel */
         .carousel {
             display: flex;
             gap: 20px;
             overflow-x: auto;
-            padding-bottom: 20px;
+            padding-bottom: 24px;
             scrollbar-width: none;
-            scroll-snap-type: x mandatory;
+            animation: autoScroll 35s linear infinite;
+        }
+
+        .carousel:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes autoScroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
         }
 
         .carousel::-webkit-scrollbar { display: none; }
@@ -81,6 +90,8 @@
 
         .video-info {
             padding: 16px;
+            font-size: 1.02rem;
+            line-height: 1.4;
         }
 
         /* Shorts */
@@ -88,6 +99,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
             gap: 16px;
+            margin-bottom: 40px;
         }
 
         .short-card {
@@ -116,6 +128,7 @@
             color: #67e8f9;
             text-decoration: none;
         }
+        a:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
@@ -133,7 +146,7 @@
         <div class="carousel">
             <!-- Video 1 -->
             <div class="video-card">
-                <img src="https://i.ytimg.com/vi/cO_AZo069L0/maxresdefault.jpg" alt="Video 1">
+                <img src="https://i.ytimg.com/vi/cO_AZo069L0/maxresdefault.jpg" alt="">
                 <div class="video-info">
                     <p><strong>Collecting Minecraft Features You FORGOT Existed.........kinda</strong></p>
                 </div>
@@ -141,7 +154,7 @@
 
             <!-- Video 2 -->
             <div class="video-card">
-                <img src="https://i.ytimg.com/vi/QEVZjcWg0Yo/maxresdefault.jpg" alt="Video 1">
+                <img src="https://i.ytimg.com/vi/QEVZjcWg0Yo/maxresdefault.jpg" alt="">
                 <div class="video-info">
                     <p><strong>Using EVERY Minecraft version to Intentionally CORRUPT my World</strong></p>
                 </div>
@@ -149,9 +162,17 @@
 
             <!-- Video 3 -->
             <div class="video-card">
-                <img src="https://i.ytimg.com/vi/YAb8z0z4NBI/maxresdefault.jpg" alt="Video 1">
+                <img src="https://i.ytimg.com/vi/YAb8z0z4NBI/maxresdefault.jpg" alt="">
                 <div class="video-info">
                     <p><strong>Can 2 NOOBS beat Minecraft's OCEAN ONLY Superflat</strong></p>
+                </div>
+            </div>
+
+            <!-- Duplicate for seamless infinite scroll -->
+            <div class="video-card">
+                <img src="https://i.ytimg.com/vi/cO_AZo069L0/maxresdefault.jpg" alt="">
+                <div class="video-info">
+                    <p><strong>Collecting Minecraft Features You FORGOT Existed.........kinda</strong></p>
                 </div>
             </div>
         </div>
@@ -169,7 +190,7 @@
         <!-- Links -->
         <div class="link-box">
             <p style="font-size:1.1rem; margin-bottom:12px;">
-                <a href="https://linkfo.me/ninjalante" target="_blank">Visit my Linkfo: Linkfo.me/ninjalante</a>
+                <a href="https://linkfo.me/ninjalante" target="_blank">Visit my Linkfo →</a>
             </p>
             <p style="opacity:0.7;">Join my Discord: Coming soon</p>
         </div>
