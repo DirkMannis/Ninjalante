@@ -52,17 +52,50 @@
             text-align: center;
         }
 
-        /* Carousel */
+        /* Carousel Container */
+        .carousel-wrapper {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
         .carousel {
             display: flex;
             gap: 20px;
             overflow-x: auto;
-            padding-bottom: 24px;
+            padding-bottom: 20px;
             scrollbar-width: thin;
             scroll-behavior: smooth;
         }
 
         .carousel::-webkit-scrollbar { height: 6px; }
+
+        /* Navigation Arrows */
+        .carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.7);
+            color: white;
+            border: none;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.2s;
+        }
+
+        .carousel-arrow:hover {
+            background: #4ade80;
+            color: black;
+        }
+
+        .left-arrow  { left: -10px; }
+        .right-arrow { right: -10px; }
 
         .video-card {
             min-width: 310px;
@@ -111,27 +144,13 @@
             object-fit: cover;
         }
 
-        /* Linkfo Box with Avatar */
+        /* Linkfo Box */
         .link-box {
             background: #111;
-            padding: 28px;
+            padding: 32px;
             border-radius: 16px;
             border: 1px solid #1f2937;
             margin-top: 40px;
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
-
-        .link-avatar {
-            width: 56px;
-            height: 56px;
-            border-radius: 50%;
-            border: 2px solid #4ade80;
-        }
-
-        .link-text {
-            flex: 1;
         }
 
         a {
@@ -153,33 +172,39 @@
 
         <!-- Latest Videos -->
         <h2>Latest Videos</h2>
-        <div class="carousel">
-            <div class="video-card">
-                <a href="https://www.youtube.com/watch?v=cO_AZo069L0" target="_blank">
-                    <img src="https://i.ytimg.com/vi/cO_AZo069L0/maxresdefault.jpg" alt="">
-                    <div class="video-info">
-                        <p><strong>Collecting Minecraft Features You FORGOT Existed.........kinda</strong></p>
-                    </div>
-                </a>
+        <div class="carousel-wrapper">
+            <button class="carousel-arrow left-arrow" onclick="document.querySelector('.carousel').scrollBy({left: -330, behavior: 'smooth'})">←</button>
+            
+            <div class="carousel">
+                <div class="video-card">
+                    <a href="https://www.youtube.com/watch?v=cO_AZo069L0" target="_blank">
+                        <img src="https://i.ytimg.com/vi/cO_AZo069L0/maxresdefault.jpg" alt="">
+                        <div class="video-info">
+                            <p><strong>Collecting Minecraft Features You FORGOT Existed.........kinda</strong></p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="video-card">
+                    <a href="https://www.youtube.com/watch?v=QEVZjcWg0Yo" target="_blank">
+                        <img src="https://i.ytimg.com/vi/QEVZjcWg0Yo/maxresdefault.jpg" alt="">
+                        <div class="video-info">
+                            <p><strong>Using EVERY Minecraft version to Intentionally CORRUPT my World</strong></p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="video-card">
+                    <a href="https://www.youtube.com/watch?v=YAb8z0z4NBI" target="_blank">
+                        <img src="https://i.ytimg.com/vi/YAb8z0z4NBI/maxresdefault.jpg" alt="">
+                        <div class="video-info">
+                            <p><strong>Can 2 NOOBS beat Minecraft's OCEAN ONLY Superflat</strong></p>
+                        </div>
+                    </a>
+                </div>
             </div>
 
-            <div class="video-card">
-                <a href="https://www.youtube.com/watch?v=QEVZjcWg0Yo" target="_blank">
-                    <img src="https://i.ytimg.com/vi/QEVZjcWg0Yo/maxresdefault.jpg" alt="">
-                    <div class="video-info">
-                        <p><strong>Using EVERY Minecraft version to Intentionally CORRUPT my World</strong></p>
-                    </div>
-                </a>
-            </div>
-
-            <div class="video-card">
-                <a href="https://www.youtube.com/watch?v=YAb8z0z4NBI" target="_blank">
-                    <img src="https://i.ytimg.com/vi/YAb8z0z4NBI/maxresdefault.jpg" alt="">
-                    <div class="video-info">
-                        <p><strong>Can 2 NOOBS beat Minecraft's OCEAN ONLY Superflat</strong></p>
-                    </div>
-                </a>
-            </div>
+            <button class="carousel-arrow right-arrow" onclick="document.querySelector('.carousel').scrollBy({left: 330, behavior: 'smooth'})">→</button>
         </div>
 
         <!-- Shorts -->
@@ -192,16 +217,12 @@
             </div>
         </div>
 
-        <!-- Linkfo with Avatar -->
+        <!-- Links -->
         <div class="link-box">
-            <img src="https://linkfo.me/_next/image?url=https%3A%2F%2Flinkfo.me%2Fapi%2Favatar%2Fninjalante&w=256&q=75" 
-                 alt="Ninjalante" class="link-avatar">
-            <div class="link-text">
-                <p style="font-size:1.12rem;">
-                    <a href="https://linkfo.me/ninjalante" target="_blank">Visit my Linkfo → Linkfo.me/ninjalante</a>
-                </p>
-                <p style="opacity:0.7; margin-top:4px;">Join my Discord: Coming soon</p>
-            </div>
+            <p style="font-size:1.12rem; margin-bottom:8px;">
+                <a href="https://linkfo.me/ninjalante" target="_blank">Visit my Linkfo → Linkfo.me/ninjalante</a>
+            </p>
+            <p style="opacity:0.7;">Join my Discord: Coming soon</p>
         </div>
 
     </main>
