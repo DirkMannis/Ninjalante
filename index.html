@@ -52,7 +52,7 @@
             text-align: center;
         }
 
-        /* Carousel Container */
+        /* Carousel */
         .carousel-wrapper {
             position: relative;
             margin-bottom: 20px;
@@ -67,35 +67,19 @@
             scroll-behavior: smooth;
         }
 
-        .carousel::-webkit-scrollbar { height: 6px; }
-
-        /* Navigation Arrows */
-        .carousel-arrow {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(0,0,0,0.7);
-            color: white;
-            border: none;
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            font-size: 1.8rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            z-index: 10;
-            transition: all 0.2s;
+        .carousel::-webkit-scrollbar {
+            height: 8px;
         }
 
-        .carousel-arrow:hover {
-            background: #4ade80;
-            color: black;
+        .carousel::-webkit-scrollbar-thumb {
+            background: linear-gradient(90deg, #4ade80, #22d3ee);
+            border-radius: 20px;
         }
 
-        .left-arrow  { left: -10px; }
-        .right-arrow { right: -10px; }
+        .carousel::-webkit-scrollbar-track {
+            background: #1f2937;
+            border-radius: 20px;
+        }
 
         .video-card {
             min-width: 310px;
@@ -144,13 +128,28 @@
             object-fit: cover;
         }
 
-        /* Linkfo Box */
+        /* Linkfo with Avatar */
         .link-box {
             background: #111;
-            padding: 32px;
+            padding: 28px;
             border-radius: 16px;
             border: 1px solid #1f2937;
             margin-top: 40px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .link-avatar {
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            border: 2px solid #4ade80;
+            flex-shrink: 0;
+        }
+
+        .link-text {
+            flex: 1;
         }
 
         a {
@@ -173,8 +172,6 @@
         <!-- Latest Videos -->
         <h2>Latest Videos</h2>
         <div class="carousel-wrapper">
-            <button class="carousel-arrow left-arrow" onclick="document.querySelector('.carousel').scrollBy({left: -330, behavior: 'smooth'})">←</button>
-            
             <div class="carousel">
                 <div class="video-card">
                     <a href="https://www.youtube.com/watch?v=cO_AZo069L0" target="_blank">
@@ -203,8 +200,6 @@
                     </a>
                 </div>
             </div>
-
-            <button class="carousel-arrow right-arrow" onclick="document.querySelector('.carousel').scrollBy({left: 330, behavior: 'smooth'})">→</button>
         </div>
 
         <!-- Shorts -->
@@ -217,12 +212,16 @@
             </div>
         </div>
 
-        <!-- Links -->
+        <!-- Linkfo with Avatar -->
         <div class="link-box">
-            <p style="font-size:1.12rem; margin-bottom:8px;">
-                <a href="https://linkfo.me/ninjalante" target="_blank">Visit my Linkfo → Linkfo.me/ninjalante</a>
-            </p>
-            <p style="opacity:0.7;">Join my Discord: Coming soon</p>
+            <img src="https://linkfo.me/_next/image?url=https%3A%2F%2Flinkfo.me%2Fapi%2Favatar%2Fninjalante&w=256&q=75" 
+                 alt="Ninjalante" class="link-avatar">
+            <div class="link-text">
+                <p style="font-size:1.12rem; margin-bottom:6px;">
+                    <a href="https://linkfo.me/ninjalante" target="_blank">Visit my Linkfo → Linkfo.me/ninjalante</a>
+                </p>
+                <p style="opacity:0.7;">Join my Discord: Coming soon</p>
+            </div>
         </div>
 
     </main>
