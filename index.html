@@ -36,7 +36,7 @@
         .nav-links {
             display: flex;
             justify-content: center;
-            gap: 28px;
+            gap: 24px;
             font-size: 0.95rem;
             font-weight: 500;
         }
@@ -49,19 +49,24 @@
         .nav-links a:hover { color: #4ade80; }
 
         header {
-            padding: 48px 0 36px;
+            padding: 42px 0 32px;
             text-align: center;
             border-bottom: 1px solid rgba(255,255,255,0.08);
         }
 
         .logo {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 4.4rem;
+            font-size: 4.35rem;
             font-weight: 700;
             letter-spacing: -3px;
             background: linear-gradient(90deg, #4ade80, #22d3ee);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+        }
+
+        @media (max-width: 480px) {
+            .logo { font-size: 3.65rem; }
+            .tagline { font-size: 1.05rem; }
         }
 
         .tagline {
@@ -72,8 +77,8 @@
         }
 
         h2 {
-            font-size: 2.0rem;
-            margin: 48px 0 24px;
+            font-size: 1.95rem;
+            margin: 46px 0 22px;
             text-align: center;
         }
 
@@ -82,7 +87,7 @@
 
         .carousel {
             display: flex;
-            gap: 20px;
+            gap: 18px;
             overflow-x: auto;
             padding-bottom: 20px;
             scrollbar-width: thin;
@@ -99,10 +104,10 @@
             background: rgba(0,0,0,0.75);
             color: white;
             border: none;
-            width: 50px;
-            height: 50px;
+            width: 48px;
+            height: 48px;
             border-radius: 50%;
-            font-size: 1.8rem;
+            font-size: 1.7rem;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -110,12 +115,12 @@
             z-index: 10;
         }
         .carousel-arrow:hover { background: #4ade80; color: #0a0a0a; }
-        .left-arrow  { left: -12px; }
-        .right-arrow { right: -12px; }
+        .left-arrow  { left: -10px; }
+        .right-arrow { right: -10px; }
 
         .video-card {
-            min-width: 310px;
-            flex: 0 0 310px;
+            min-width: 295px;           /* Adjusted for better preview of 2nd video */
+            flex: 0 0 295px;
             background: #111;
             border-radius: 16px;
             overflow: hidden;
@@ -123,8 +128,8 @@
         }
 
         .video-card a { text-decoration: none; color: inherit; }
-        .video-card img { width: 100%; height: 190px; object-fit: cover; }
-        .video-info { padding: 16px; font-size: 1.02rem; line-height: 1.4; }
+        .video-card img { width: 100%; height: 188px; object-fit: cover; }
+        .video-info { padding: 14px; font-size: 1.01rem; line-height: 1.35; }
 
         /* Shorts */
         .shorts {
@@ -147,7 +152,7 @@
             object-fit: cover;
         }
 
-        /* Agent Section */
+        /* Agent */
         .agent-section {
             text-align: center;
             padding: 42px 32px;
@@ -176,7 +181,7 @@
             transform: translateY(-4px);
         }
 
-        /* Linkfo Box */
+        /* Linkfo */
         .link-box {
             background: linear-gradient(135deg, #111827, #1e2937);
             padding: 32px;
@@ -205,7 +210,7 @@
             <div class="nav-links">
                 <a href="#videos">Latest Videos</a>
                 <a href="#shorts">Shorts</a>
-                <a href="#agent">Talk to Agent</a>
+                <a href="#agent">Talk to Ninjalante</a>
                 <a href="#links">My Links</a>
             </div>
         </div>
@@ -223,7 +228,7 @@
         <!-- Latest Videos -->
         <h2 id="videos">Latest Videos</h2>
         <div class="carousel-wrapper">
-            <button class="carousel-arrow left-arrow" onclick="document.querySelector('.carousel').scrollBy({left: -330, behavior: 'smooth'})">‹</button>
+            <button class="carousel-arrow left-arrow" onclick="document.querySelector('.carousel').scrollBy({left: -315, behavior: 'smooth'})">‹</button>
             
             <div class="carousel">
                 <div class="video-card">
@@ -254,7 +259,7 @@
                 </div>
             </div>
 
-            <button class="carousel-arrow right-arrow" onclick="document.querySelector('.carousel').scrollBy({left: 330, behavior: 'smooth'})">›</button>
+            <button class="carousel-arrow right-arrow" onclick="document.querySelector('.carousel').scrollBy({left: 315, behavior: 'smooth'})">›</button>
         </div>
 
         <!-- Shorts -->
@@ -313,7 +318,6 @@
         © Ninjalante
     </footer>
 
-    <!-- Agent Embed -->
     <script src="https://linkfo.me/embed.js"
             data-username="ninjalante"
             data-position="right"
