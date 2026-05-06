@@ -23,8 +23,36 @@
             padding: 0 24px;
         }
 
+        /* Thin Navigation */
+        nav {
+            background: rgba(10, 10, 10, 0.96);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            padding: 14px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            font-size: 0.96rem;
+            font-weight: 500;
+        }
+
+        .nav-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #4ade80;
+        }
+
         header {
-            padding: 32px 0 36px;
+            padding: 48px 0 36px;
             text-align: center;
             border-bottom: 1px solid rgba(255,255,255,0.08);
         }
@@ -65,10 +93,7 @@
         }
 
         .carousel::-webkit-scrollbar { height: 8px; }
-        .carousel::-webkit-scrollbar-thumb {
-            background: linear-gradient(90deg, #4ade80, #22d3ee);
-            border-radius: 20px;
-        }
+        .carousel::-webkit-scrollbar-thumb { background: linear-gradient(90deg, #4ade80, #22d3ee); border-radius: 20px; }
         .carousel::-webkit-scrollbar-track { background: #1f2937; border-radius: 20px; }
 
         .carousel-arrow {
@@ -102,16 +127,10 @@
         }
 
         .video-card a { text-decoration: none; color: inherit; }
-
-        .video-card img {
-            width: 100%;
-            height: 190px;
-            object-fit: cover;
-        }
-
+        .video-card img { width: 100%; height: 190px; object-fit: cover; }
         .video-info { padding: 16px; font-size: 1.02rem; line-height: 1.4; }
 
-        /* Shorts - Fixed to show 2 per row */
+        /* Shorts - 2 per row */
         .shorts {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -132,7 +151,7 @@
             object-fit: cover;
         }
 
-        /* Agent Section */
+        /* Agent */
         .agent-section {
             text-align: center;
             padding: 42px 32px;
@@ -153,7 +172,6 @@
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
-            margin-top: 12px;
         }
 
         .agent-link:hover {
@@ -162,7 +180,7 @@
             transform: translateY(-4px);
         }
 
-        /* Linkfo Box */
+        /* Linkfo */
         .link-box {
             background: linear-gradient(135deg, #111827, #1e2937);
             padding: 32px;
@@ -184,6 +202,19 @@
     </style>
 </head>
 <body>
+
+    <!-- Thin Navigation -->
+    <nav>
+        <div class="container">
+            <div class="nav-links">
+                <a href="#videos">Latest Videos</a>
+                <a href="#shorts">Shorts</a>
+                <a href="#agent">Talk to Agent</a>
+                <a href="#links">My Links</a>
+            </div>
+        </div>
+    </nav>
+
     <header>
         <div class="container">
             <h1 class="logo">NINJALANTE</h1>
@@ -194,7 +225,7 @@
     <main class="container">
 
         <!-- Latest Videos -->
-        <h2>Latest Videos</h2>
+        <h2 id="videos">Latest Videos</h2>
         <div class="carousel-wrapper">
             <button class="carousel-arrow left-arrow" onclick="document.querySelector('.carousel').scrollBy({left: -330, behavior: 'smooth'})">‹</button>
             
@@ -231,7 +262,7 @@
         </div>
 
         <!-- Shorts -->
-        <h2>Shorts</h2>
+        <h2 id="shorts">Shorts</h2>
         <div class="shorts">
             <div class="short-card">
                 <a href="https://www.youtube.com/shorts/bWKy6G1r8gM" target="_blank">
@@ -253,7 +284,7 @@
         </div>
 
         <!-- Agent -->
-        <div class="agent-section">
+        <div class="agent-section" id="agent">
             <h2>Talk to Ninjalante Agent</h2>
             <div onclick="window.open('https://linkfo.me/ninjalante', '_blank')" class="agent-link">
                 Ask Ninjalante Anything →
@@ -261,7 +292,7 @@
         </div>
 
         <!-- Links -->
-        <div class="link-box" style="background: linear-gradient(135deg, #111827, #1e2937); padding: 32px; border-radius: 20px; border: 1px solid #4ade80; box-shadow: 0 10px 30px rgba(74, 222, 128, 0.1);">
+        <div class="link-box" id="links">
             <div style="display: flex; align-items: center; gap: 18px; margin-bottom: 20px;">
                 <img src="https://linkfo.me/_next/image?url=https%3A%2F%2Flinkfo.me%2Fapi%2Favatar%2Fninjalante&w=256&q=75" 
                      alt="Ninjalante" 
