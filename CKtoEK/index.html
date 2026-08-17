@@ -8,26 +8,30 @@
     body {
       font-family: Arial, Helvetica, sans-serif;
       margin: 0;
-      padding: 20px;
-      background-color: #f8f9fa;
+      padding: 30px 15px;
+      background-color: #E6F0FA; /* soft powder blue */
       text-align: center;
     }
     h1 {
-      margin: 10px 0 20px 0;
-      font-size: 1.8rem;
-      color: #222;
+      margin: 0 0 18px 0;
+      font-size: 1.9rem;
+      color: #1a3a5c;
+      font-weight: 600;
     }
     .sheet-container {
-      width: 90%;
-      max-width: 900px;
+      width: 88%;
+      max-width: 820px;
       margin: 0 auto;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      overflow: hidden;
     }
     iframe {
       width: 100%;
-      height: 650px;          /* Adjust this height as needed */
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      background: white;
+      height: 580px;          /* adjusted – less empty space */
+      border: none;
+      display: block;
     }
   </style>
 </head>
@@ -35,8 +39,10 @@
   <h1>CK to EK Payments</h1>
 
   <div class="sheet-container">
-    <!-- Replace the src below with your actual published Google Sheet embed URL -->
-    <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxvO86dHv46X6nSjk7pMxRprNKWXorz4mc2YtQqVDRD7Fyuk5GTW3bApFf0HpPtI1KZGgRagQcikte/pubhtml?gid=1968328624&amp;single=true&amp;widget=true&amp;headers=false">
+    <!-- Keep your existing published src URL -->
+    <iframe 
+      src="https://docs.google.com/spreadsheets/d/e/YOUR_PUBLISHED_ID/pubhtml?widget=false&headers=false&chrome=false"
+      frameborder="0">
     </iframe>
   </div>
 </body>
